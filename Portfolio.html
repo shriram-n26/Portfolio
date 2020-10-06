@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - Portfolio</title>
+  
+  
+  
+  
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* Start now */
+
+body {
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 300;
+  line-height: 1.4;
+  color: white;
+}
+
+h1,
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 3.8rem;
+}
+
+ul {
+  list-style: none;
+}
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  display: solid;
+  width: 100%;
+}
+
+/* nav */
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 1;
+  width: 100%;
+  background: "";
+  box-shadow: 2 2px 0 rgba(10, 10, 10, 1);
+  z-index: 10;
+  color: white;
+}
+
+.nav-list {
+  display: flex;
+  margin-right: 2rem;
+  color: white;
+}
+
+@media (max-width: 28.75em) {
+  .nav {
+    justify-content: center;
+  }
+
+  .nav-list {
+    margin: 0 4rem;
+  }
+}
+
+.nav-list a {
+  display: block;
+  font-size: 1.8rem;
+  padding: 1.5rem;
+  color: white;
+}
+
+.nav-list a:hover {
+  background: orange;
+}
+
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+   background-image: linear-gradient(
+      0deg,
+      rgba(11, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),url("https://imgs.classicfm.com/images/61630?width=1000&crop=16_9&signature=UOxsAc4VhzNYQEIG-RTXur_mix8=")
+}
+
+.welcome-section > p {
+  font-size: 2.5rem;
+  font-weight: 500;
+  font-style: italic;
+  color: yellow;
+}
+
+
+
+.projects-section {
+  text-align: center;
+  padding: 15rem 8rem;
+  background-image: linear-gradient(
+      516deg,
+      rgba(81, 18, 78, 0.8),
+      rgba(0, 86, 206, 0.7)
+    ),url("https://images.unsplash.com/photo-1534988333262-c455b9332e52?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1932&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.projects-section-header {
+  max-width: 340px;
+  margin: 0 auto 6rem auto;
+  border-bottom: 0.4rem solid white;
+}
+
+@media (max-width: 28.75em) {
+  .projects-section-header {
+    font-size: 0rem;
+  }
+}
+
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+  grid-gap: 20rem;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+@media (max-width: 30.625em) {
+  .projects-section {
+    padding: 6rem 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 2fr;
+  }
+}
+
+.project {
+  background: lightyellow;
+  box-shadow: 0px 0px 0px rgba(00, 100, 0, 0.9);
+  border-radius: 10px;
+}
+
+.code {
+  color: lightyellow;
+  transition: color 0.1s ease-out;
+}
+
+.project:hover .code {
+  color: lightyellow;
+}
+
+.project-image {
+  height: calc(100% - 6.8rem);
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-title {
+  font-size: 2rem;
+  padding: 1.5rem 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+}
+
+.btn-show-all {
+  font-size: 2rem;
+  background:white;
+  transition: background 0.3s ease-out;
+}
+
+.btn-show-all:hover {
+  background:  rgba(470, 70, 140, 0.5);
+}
+
+.btn-show-all:hover > i {
+  transform: translateX(10px);
+}
+
+.btn-show-all > i {
+  margin-left: 10px;
+  transform: translateX(10);
+  transition: transform 0.7s ease-out;
+}
+
+
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 90vh;
+  padding: 0 3rem;
+  background-image: linear-gradient(
+      88deg,
+      rgba(11, 88, 148, 0.8),
+      rgba(346, 236, 206, 0.2)
+    ),url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contact-section-header > h2 {
+  font-size: 4rem;
+}
+
+@media (max-width: 28.75em) {
+  .contact-section-header > h2 {
+    font-size: 2rem;
+  }
+}
+
+.contact-section-header > p {
+  font-style: italic;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-details {
+  font-size: 3rem;
+  text-shadow: 1px 1px 1px #1f1f1f;
+  transition: transform 0.2s ease-out;
+}
+
+.contact-details:hover {
+  transform: translateY(10px);
+}
+
+
+
+footer {
+  font-weight: 400;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem;
+  background: lightyellow;
+}
+
+footer > p {
+  margin: 0rem;
+  color: black;
+}
+
+footer i {
+  vertical-align: right;
+}
+
+@media (max-width: 28.75em) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+  integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+  crossorigin="anonymous"
+/>
+<linki,300,400&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- start now-->
+<nav id="navbar" class="nav">
+  <ul class="nav-list">
+    <li>
+      <a href="#welcome-section">About</a>
+    </li>
+    <li>
+      <a href="#projects">Work</a>
+    </li>
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
+  </ul>
+</nav>
+<section id="welcome-section" class="welcome-section">
+  <h1>Hey! I'm Shriram</h1>
+  <p>A Web developer</p>
+</section>
+
+<section id="projects" class="projects-section">
+  <h2 class="projects-section-header">My Projects</h2>
+
+  <div class="projects-grid">
+    <a
+      href="https://codepen.io/shriram-n26/full/rNeEEJp"
+      target="_blank"
+      class="project project-tile"
+    >
+      <img
+       
+        class="project-image"
+        src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Elon_Musk_Royal_Society.jpg"
+        alt="project"
+      />
+        
+      <p class="project-title">
+        <span class="code">&lt;</span>
+        Tribute Page
+        <span class="code">&#47;&gt;</span>
+      </p>
+    </a>
+    <a
+      href="https://codepen.io/shriram-n26/pen/mdPNENy"
+      target="_blank"
+      class="project project-tile"
+    >
+      <img
+       
+        class="project-image"
+        src="https://d2dfxqxblmblx4.cloudfront.net/wp-content/uploads/2016/03/18151100/Survey-2-1024x1024.jpg"
+        alt="project"
+      />
+        
+      <p class="project-title">
+        <span class="code">&lt;</span>
+        Survey Form
+        <span class="code">&#47;&gt;</span>
+      </p>
+    </a>
+   </div>
+     <a
+    href="https://codepen.io/shriram-n26"
+    class="btn btn-show-all"
+    target="_blank"
+    >My Codepen<i class="fas fa-chevron-right"></i
+  ></a>
+</section>
+    <section id="contact" class="contact-section">
+  <div class="contact-section-header">
+    <h2>Let's chat!!</h2>
+    <p></p>
+  </div>
+  <div class="contact-links">
+   
+    <a
+      id="profile-link"
+      href="https://github.com/shriram-n26"
+      target="_blank"
+      class="btn contact-details"
+      ><i class="fab fa-github"></i> GitHub</a
+    >
+    <a
+      href="https://twitter.com/shr1ram_n_"
+      target="_blank"
+      class="btn contact-details"
+      ><i class="fab fa-twitter"></i> Twitter</a
+    >
+    <a href="/cdn-cgi/l/email-protection#81f2e9f3e8f3e0ecefe0f3e0f8e0efe0e3e9e0f5c1e6ece0e8edafe2eeec" class="btn contact-details"><i class="fas fa-at"></i> Email</a
+    >
+  </div>
+</section>
+    <footer>
+                           
+  <p>
+   	&#169 Shriram Narayana Bhat
+  </p>
+  <p>
+                           <a href="https://www.instagram.com/invites/contact/?i=1qmv9qntnv283&utm_content=2g5yp5a" target="_blank"
+      >Instagram <i class="fa fa-twitter"></i
+    ></a>
+      
+    
+  </p>
+</footer>
+  
+  
+  
+  
+  
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+
+</html>
